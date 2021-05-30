@@ -50,7 +50,13 @@ class _MyDrawerState extends State<MyDrawer> {
               onTap: () async {
                 const url = 'https://www.worldometers.info/coronavirus/';
                 if (await canLaunch(url)) {
-                  await launch(url);
+                  await launch(
+                    url,
+                    forceSafariVC: true,
+                    forceWebView: true,
+                    enableJavaScript: true,
+                    headers: <String, String>{'header_key': 'header_value'},
+                  );
                 } else {
                   throw 'Could not launch $url';
                 }
@@ -62,11 +68,11 @@ class _MyDrawerState extends State<MyDrawer> {
             ListTile(
               tileColor: Colors.red,
               leading: Icon(
-                Icons.download,
+                Icons.location_city,
                 color: Colors.black,
               ),
               title: Text(
-                'Download Vaccination Certificate (BETA)',
+                'State-Wise Data',
                 style: TextStyle(fontSize: 18, color: Colors.black),
               ),
               onTap: () {
