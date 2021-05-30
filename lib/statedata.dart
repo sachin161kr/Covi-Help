@@ -92,7 +92,7 @@ class _StateDataState extends State<StateData> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                'Name: $name',
+                                'State: $name',
                                 style: TextStyle(
                                   //color: Colors.white,
                                   fontWeight: FontWeight.bold,
