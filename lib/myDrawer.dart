@@ -1,4 +1,5 @@
 import 'package:covidapp/certificate.dart';
+import 'package:covidapp/news.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -40,6 +41,42 @@ class _MyDrawerState extends State<MyDrawer> {
             ListTile(
               tileColor: Colors.red,
               leading: Icon(
+                Icons.location_city,
+                color: Colors.black,
+              ),
+              title: Text(
+                'State-Wise Data',
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Certificate()));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              tileColor: Colors.red,
+              leading: Icon(
+                Icons.health_and_safety,
+                color: Colors.black,
+              ),
+              title: Text(
+                'News on Health',
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => News()));
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              tileColor: Colors.red,
+              leading: Icon(
                 Icons.local_hospital,
                 color: Colors.black,
               ),
@@ -60,24 +97,6 @@ class _MyDrawerState extends State<MyDrawer> {
                 } else {
                   throw 'Could not launch $url';
                 }
-              },
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            ListTile(
-              tileColor: Colors.red,
-              leading: Icon(
-                Icons.location_city,
-                color: Colors.black,
-              ),
-              title: Text(
-                'State-Wise Data',
-                style: TextStyle(fontSize: 18, color: Colors.black),
-              ),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Certificate()));
               },
             ),
             SizedBox(
