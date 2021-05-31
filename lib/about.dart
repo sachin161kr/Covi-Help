@@ -216,7 +216,7 @@ class About extends StatelessWidget {
                       color: Colors.yellow),
                   padding: EdgeInsets.all(8),
                   child: Text(
-                    'HomePage Image: \nSource - https://www.freepik.com/',
+                    'HomePage Image: https://www.freepik.com/\nApp Icon: https://www.freepik.com/',
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -238,7 +238,7 @@ class About extends StatelessWidget {
                       color: Colors.yellow),
                   padding: EdgeInsets.all(8),
                   child: Text(
-                    'Poice: https://pngtree.com/free-png\nNurse: https://pngtree.com/free-png\nCat: https://pngtree.com/free-png',
+                    'Police: https://pngtree.com/free-png\nNurse: https://pngtree.com/free-png\nCat: https://pngtree.com/free-png',
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
