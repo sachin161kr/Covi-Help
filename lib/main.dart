@@ -34,9 +34,13 @@ class _MyAppState extends State<MyApp> {
           key: _formKey,
           child: Column(
             children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 3 - 180,
+              ),
               Container(
-                padding: EdgeInsets.only(top: 55, bottom: 0),
-                height: MediaQuery.of(context).size.height / 5 - 100,
+                padding: EdgeInsets.only(top: 20, bottom: 0),
+                //height: MediaQuery.of(context).size.height / 5 - 100,
+                height: 50,
                 child: Text(
                   '#LET\'S GET VACCINATED',
                   style: TextStyle(
@@ -46,13 +50,14 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height / 3 + 100,
-                width: 400,
+                height: 280,
+                width: 350,
                 child: Image.asset('assets/images/vaccination.png'),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 16, left: 30, right: 30),
+                padding: const EdgeInsets.only(top: 8, left: 30, right: 30),
                 child: TextFormField(
+                  keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'This Field is Mandatory';
@@ -117,7 +122,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     )),
-              )
+              ),
             ],
           ),
         ),

@@ -24,7 +24,7 @@ class _CertificateState extends State<Certificate> {
         child: Column(
           children: [
             SizedBox(
-              height: 100,
+              height: MediaQuery.of(context).size.height / 3 - 150,
             ),
             Container(
               color: Colors.yellow,
@@ -39,7 +39,8 @@ class _CertificateState extends State<Certificate> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height / 3 + 50,
+              height: 300,
+              width: 300,
               child: Image.asset(
                 'assets/images/nurse1.png',
                 //height: double.infinity,

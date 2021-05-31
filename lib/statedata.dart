@@ -62,33 +62,39 @@ class _StateDataState extends State<StateData> {
       appBar: AppBar(
         title: Text('Covid-19 Data'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 50.0),
-        child: (loaded == false)
-            ? Center(child: CircularProgressIndicator(color: Colors.red))
-            : (confirmedCases == null)
-                ? Padding(
-                    padding: const EdgeInsets.only(
-                        bottom: 8.0, left: 8, right: 8, top: 250),
-                    child: Text(
-                      'State not found, re-check your input for errors',
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                    ),
-                  )
-                : SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(top: 20),
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.height / 3 - 50,
-                          // decoration: BoxDecoration(
-                          //   border: Border.all(color: Colors.red),
-                          // ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 0),
+          child: (loaded == false)
+              ? Center(child: CircularProgressIndicator(color: Colors.red))
+              : (confirmedCases == null)
+                  ? Padding(
+                      padding: const EdgeInsets.only(
+                          bottom: 8.0, left: 8, right: 8, top: 250),
+                      child: Text(
+                        'State not found, re-check your input for errors',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  : SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height:
+                                MediaQuery.of(context).size.height / 3 - 180,
+                          ),
+                          Container(
+                            //padding: EdgeInsets.only(top: 10),
+                            width: double.infinity,
+                            height: MediaQuery.of(context).size.height / 3,
+                            // decoration: BoxDecoration(
+                            //   border: Border.all(color: Colors.red),
+                            // ),
 
-                          child: SingleChildScrollView(
                             child: Column(
                               children: [
                                 Padding(
@@ -151,13 +157,14 @@ class _StateDataState extends State<StateData> {
                               ],
                             ),
                           ),
-                        ),
-                        Container(
-                          child: Image.asset('assets/images/cat.png'),
-                        )
-                      ],
+                          Container(
+                            height: 300,
+                            child: Image.asset('assets/images/cat.png'),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
+        ),
       ),
     );
   }
