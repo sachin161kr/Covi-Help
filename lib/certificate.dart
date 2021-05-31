@@ -27,6 +27,18 @@ class _CertificateState extends State<Certificate> {
               height: 100,
             ),
             Container(
+              color: Colors.yellow,
+              padding: EdgeInsets.all(8),
+              child: Text(
+                'NOTE: Names of States are Case sensitive',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
               height: MediaQuery.of(context).size.height / 3 + 50,
               child: Image.asset(
                 'assets/images/nurse1.png',

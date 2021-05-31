@@ -105,6 +105,34 @@ class _MyDrawerState extends State<MyDrawer> {
             ListTile(
               tileColor: Colors.red,
               leading: Icon(
+                Icons.medical_services,
+                color: Colors.black,
+              ),
+              title: Text(
+                'Co-WIN Portal',
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
+              onTap: () async {
+                const url = 'https://www.cowin.gov.in/home';
+                if (await canLaunch(url)) {
+                  await launch(
+                    url,
+                    // forceSafariVC: true,
+                    // forceWebView: true,
+                    // enableJavaScript: true,
+                    // headers: <String, String>{'header_key': 'header_value'},
+                  );
+                } else {
+                  throw 'Could not launch $url';
+                }
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            ListTile(
+              tileColor: Colors.red,
+              leading: Icon(
                 Icons.info,
                 color: Colors.black,
               ),

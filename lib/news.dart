@@ -42,7 +42,7 @@ class _NewsState extends State<News> {
               return Container(
                   padding: EdgeInsets.only(top: 250, right: 10, left: 10),
                   child: Text(
-                    'Vaccine Not Available at this Pincode.',
+                    'Sorry! News not available at this moment. Try again later.',
                     style: TextStyle(
                       fontSize: 25,
                     ),

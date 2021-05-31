@@ -77,81 +77,86 @@ class _StateDataState extends State<StateData> {
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                   ))
-                : Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(top: 50),
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height / 3 - 30,
-                        // decoration: BoxDecoration(
-                        //   border: Border.all(color: Colors.red),
-                        // ),
+                : SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(top: 20),
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.height / 3 - 50,
+                          // decoration: BoxDecoration(
+                          //   border: Border.all(color: Colors.red),
+                          // ),
 
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'State: $name',
-                                style: TextStyle(
-                                  //color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                color: Colors.yellow,
-                                padding: EdgeInsets.all(8),
-                                child: Text(
-                                  'Confirmed Cases: $confirmedCases',
-                                  style: TextStyle(
-                                    //color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'State: $name',
+                                    style: TextStyle(
+                                      //color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                padding: EdgeInsets.all(8),
-                                color: Colors.green,
-                                child: Text(
-                                  'Total Recovered: $recoverd',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    color: Colors.yellow,
+                                    padding: EdgeInsets.all(8),
+                                    child: Text(
+                                      'Confirmed Cases: $confirmedCases',
+                                      style: TextStyle(
+                                        //color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                padding: EdgeInsets.all(8),
-                                color: Colors.red,
-                                child: Text(
-                                  'Total Deaths: $deaths',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    padding: EdgeInsets.all(8),
+                                    color: Colors.green,
+                                    child: Text(
+                                      'Total Recovered: $recoverd',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8, right: 8, bottom: 0),
+                                  child: Container(
+                                    padding: EdgeInsets.all(8),
+                                    color: Colors.red,
+                                    child: Text(
+                                      'Total Deaths: $deaths',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        child: Image.asset('assets/images/cat.png'),
-                      )
-                    ],
+                        Container(
+                          child: Image.asset('assets/images/cat.png'),
+                        )
+                      ],
+                    ),
                   ),
       ),
     );
