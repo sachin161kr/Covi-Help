@@ -90,11 +90,12 @@ class _DetailsState extends State<Details> {
             itemBuilder: (context, index) {
               setDose(index);
               return Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Container(
                   decoration: BoxDecoration(
                       border: Border.all(
                     color: Colors.red,
+                    width: 5,
                   )),
                   padding: EdgeInsets.all(10),
                   child: Card(
@@ -107,17 +108,28 @@ class _DetailsState extends State<Details> {
                                 (json['sessions'][index]['center_id'])
                                     .toString(),
                             textAlign: TextAlign.center,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Center Name: ' + json['sessions'][index]['name'],
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
-                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Colors.yellow,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Text(
+                              'Center Name: ' + json['sessions'][index]['name'],
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ),
                         Padding(
@@ -125,6 +137,10 @@ class _DetailsState extends State<Details> {
                           child: Text(
                             'Address: ' + json['sessions'][index]['address'],
                             textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         Padding(
@@ -132,6 +148,10 @@ class _DetailsState extends State<Details> {
                           child: Text(
                             'From: ' + json['sessions'][index]['from'],
                             textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         Padding(
@@ -139,6 +159,10 @@ class _DetailsState extends State<Details> {
                           child: Text(
                             'To: ' + json['sessions'][index]['to'],
                             textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         Padding(
@@ -146,22 +170,30 @@ class _DetailsState extends State<Details> {
                           child: Text(
                             'Fee Type: ' + json['sessions'][index]['fee_type'],
                             textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             padding: const EdgeInsets.all(8.0),
-                            color: dose1 == 0 ? Colors.red : Colors.green,
+                            decoration: BoxDecoration(
+                              color: dose2 == 0 ? Colors.red : Colors.green,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            //color: dose1 == 0 ? Colors.red : Colors.green,
                             child: Text(
                               'Available Capacity for dose 1: ' +
                                   (json['sessions'][index]
                                           ['available_capacity_dose1'])
                                       .toString(),
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                              ),
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -170,16 +202,19 @@ class _DetailsState extends State<Details> {
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             padding: EdgeInsets.all(8),
-                            color: dose2 == 0 ? Colors.red : Colors.green,
+                            decoration: BoxDecoration(
+                              color: dose2 == 0 ? Colors.red : Colors.green,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                             child: Text(
                               'Available Capacity for dose 2: ' +
                                   (json['sessions'][index]
                                           ['available_capacity_dose2'])
                                       .toString(),
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                              ),
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -189,6 +224,10 @@ class _DetailsState extends State<Details> {
                           child: Text(
                             'Fee: ' + json['sessions'][index]['fee'],
                             textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         Padding(
@@ -198,18 +237,29 @@ class _DetailsState extends State<Details> {
                                 (json['sessions'][index]['min_age_limit'])
                                     .toString(),
                             textAlign: TextAlign.center,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'Vaccine Name: ' +
-                                json['sessions'][index]['vaccine'],
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
-                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Colors.yellow,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Text(
+                              'Vaccine Name: ' +
+                                  json['sessions'][index]['vaccine'],
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ),
                         //Text(json['sessions'][index]['name']),
