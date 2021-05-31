@@ -41,7 +41,8 @@ class _DetailsState extends State<Details> {
     json = jsonDecode(response.body);
     len = json['sessions'].length;
     //dose1 = json['sessions'][index]['available_capacity_dose1']
-    print(json);
+    //print(json);
+    print(widget.date);
 
     // if (json == null) {
     //   display = 'No Vaccines available here.';
@@ -80,9 +81,7 @@ class _DetailsState extends State<Details> {
                 padding: EdgeInsets.only(top: 250, right: 10, left: 10),
                 child: Text(
                   'Vaccine Not Available at this Pincode.',
-                  style: TextStyle(
-                    fontSize: 25,
-                  ),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ));
           }

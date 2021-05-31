@@ -1,10 +1,11 @@
 import 'package:covidapp/details.dart';
 import 'package:flutter/material.dart';
 import './myDrawer.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(MaterialApp(
-    theme: ThemeData(primaryColor: Colors.red),
+    theme: ThemeData(primaryColor: Colors.red, accentColor: Colors.red),
     home: MyApp(),
   ));
 }
@@ -20,6 +21,30 @@ class _MyAppState extends State<MyApp> {
   TextEditingController date = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
+
+  DateTime datee;
+
+  selectDate(BuildContext context) async {
+    DateTime datePicker = await showDatePicker(
+        context: context,
+        initialDate: datee == null ? DateTime.now() : datee,
+        firstDate: DateTime(2001),
+        lastDate: DateTime(2050),
+        builder: (BuildContext context, Widget child) {
+          return Theme(
+              data: ThemeData(
+                  primaryColor: Colors.red,
+                  accentColor: Colors.red,
+                  primarySwatch: Colors.red),
+              child: child);
+        });
+
+    if (datePicker != null && datePicker != datee) {
+      setState(() {
+        datee = datePicker;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,19 +99,35 @@ class _MyAppState extends State<MyApp> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 16, left: 30, right: 30),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return 'This Field is Mandatory';
-                    } else if (value.length != 10) {
-                      return 'Enter a Valid Date';
-                    }
+                // child: TextFormField(
+                //   validator: (value) {
+                //     if (value.isEmpty) {
+                //       return 'This Field is Mandatory';
+                //     } else if (value.length != 10) {
+                //       return 'Enter a Valid Date';
+                //     }
 
-                    return null;
+                //     return null;
+                //   },
+                //   controller: date,
+                //   decoration: InputDecoration(
+                //     hintText: 'Enter Date (DD-MM-YYYY)',
+                //   ),
+                // ),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      selectDate(context);
+                    });
                   },
-                  controller: date,
-                  decoration: InputDecoration(
-                    hintText: 'Enter Date (DD-MM-YYYY)',
+                  child: Row(
+                    children: [
+                      Icon(Icons.calendar_today),
+                      SizedBox(width: 10),
+                      Text(datee == null
+                          ? 'Pick a Date'
+                          : DateFormat('dd-MM-yyyy').format(datee)),
+                    ],
                   ),
                 ),
               ),
@@ -107,7 +148,8 @@ class _MyAppState extends State<MyApp> {
                             MaterialPageRoute(
                                 builder: (context) => Details(
                                       pin: pin.text,
-                                      date: date.text,
+                                      date: (DateFormat('dd-MM-yyyy')
+                                          .format(datee)),
                                     )));
                       } else {
                         print('Not okay');
