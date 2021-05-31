@@ -1,3 +1,4 @@
+import 'package:covidapp/about.dart';
 import 'package:covidapp/certificate.dart';
 import 'package:covidapp/news.dart';
 import 'package:flutter/material.dart';
@@ -141,8 +142,8 @@ class _MyDrawerState extends State<MyDrawer> {
                 style: TextStyle(fontSize: 18, color: Colors.black),
               ),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => About()));
               },
             ),
           ],
