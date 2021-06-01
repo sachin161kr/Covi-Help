@@ -90,7 +90,7 @@ class _StateDataState extends State<StateData> {
                           Container(
                             //padding: EdgeInsets.only(top: 10),
                             width: double.infinity,
-                            height: MediaQuery.of(context).size.height / 3,
+                            height: MediaQuery.of(context).size.height / 3 + 10,
                             // decoration: BoxDecoration(
                             //   border: Border.all(color: Colors.red),
                             // ),
@@ -98,7 +98,8 @@ class _StateDataState extends State<StateData> {
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, bottom: 8, left: 11, right: 11),
                                   child: Text(
                                     'State: $name',
                                     style: TextStyle(
@@ -106,6 +107,7 @@ class _StateDataState extends State<StateData> {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18,
                                     ),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
                                 Padding(

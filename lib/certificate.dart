@@ -112,7 +112,7 @@ class _CertificateState extends State<Certificate> {
                                 ),
                                 value: value);
                           }).toList(),
-                          hint: Text('Choose the State'),
+                          hint: Text('Choose State'),
                           onChanged: (value) {
                             setState(() {
                               chosenValue = value;

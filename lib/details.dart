@@ -80,7 +80,7 @@ class _DetailsState extends State<Details> {
             return Container(
                 padding: EdgeInsets.only(top: 250, right: 10, left: 10),
                 child: Text(
-                  'Vaccine Not Available at this Pincode.',
+                  'Vaccine Not Available at this Pincode on selected date.',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ));
