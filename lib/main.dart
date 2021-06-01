@@ -142,7 +142,8 @@ class _MyAppState extends State<MyApp> {
                                     borderRadius: BorderRadius.circular(10.0),
                                     side: BorderSide(color: Colors.red)))),
                     onPressed: () {
-                      if (!(datee == null)) {
+                      if (!(datee == null) &&
+                          _formKey.currentState.validate()) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
