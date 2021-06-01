@@ -90,10 +90,10 @@ class _MyDrawerState extends State<MyDrawer> {
                 if (await canLaunch(url)) {
                   await launch(
                     url,
-                    forceSafariVC: true,
-                    forceWebView: true,
-                    enableJavaScript: true,
-                    headers: <String, String>{'header_key': 'header_value'},
+                    // forceSafariVC: true,
+                    // forceWebView: true,
+                    // enableJavaScript: true,
+                    // headers: <String, String>{'header_key': 'header_value'},
                   );
                 } else {
                   throw 'Could not launch $url';
