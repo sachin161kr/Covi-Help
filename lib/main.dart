@@ -1,3 +1,4 @@
+import 'package:covidapp/certificate.dart';
 import 'package:covidapp/details.dart';
 import 'package:flutter/material.dart';
 import './myDrawer.dart';
@@ -52,7 +53,7 @@ class _MyAppState extends State<MyApp> {
       drawer: MyDrawer(),
       appBar: AppBar(
         //leading: Icon(Icons.local_hospital),
-        title: Text('Covid-19 Vaccine Tracker'),
+        title: Text('Welcome to Covi-Help'),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -77,7 +78,7 @@ class _MyAppState extends State<MyApp> {
               Container(
                 height: 280,
                 width: 350,
-                child: Image.asset('assets/images/vaccination.png'),
+                child: Image.asset('assets/images/mainpage.png'),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 8, left: 30, right: 30),

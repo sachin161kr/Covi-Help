@@ -79,12 +79,12 @@ class _CertificateState extends State<Certificate> {
                   // ),
                   Container(
                     height: 300,
-                    width: 300,
+                    width: 290,
                     child: Image.asset(
-                      'assets/images/nurse1.png',
+                      'assets/images/india3.png',
                       //height: double.infinity,
                       //width: double.infinity,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                     ),
                   ),
                   // Padding(

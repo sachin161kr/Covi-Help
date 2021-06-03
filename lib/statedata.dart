@@ -161,7 +161,8 @@ class _StateDataState extends State<StateData> {
                           ),
                           Container(
                             height: 300,
-                            child: Image.asset('assets/images/cat.png'),
+                            width: 280,
+                            child: Image.asset('assets/images/image1.png'),
                           )
                         ],
                       ),

@@ -22,17 +22,20 @@ class _MyDrawerState extends State<MyDrawer> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             Container(
-              height: 300,
+              height: 320,
               child: DrawerHeader(
                 padding: EdgeInsets.zero,
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
-                child: Image.asset(
-                  'assets/images/police.png',
-                  //height: double.infinity,
-                  //width: double.infinity,
-                  fit: BoxFit.cover,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset(
+                    'assets/images/home.png',
+                    //height: double.infinity,
+                    //width: double.infinity,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ),

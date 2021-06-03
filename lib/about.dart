@@ -180,75 +180,75 @@ class About extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 8.0,
-                  right: 8,
-                  top: 8,
-                  bottom: 8,
-                ),
-                child: Container(
-                  //width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.yellow),
-                  padding: EdgeInsets.all(8),
-                  child: Text(
-                    'Image Sources : ',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 8.0,
-                  right: 8,
-                  top: 0,
-                  bottom: 8,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.yellow),
-                  padding: EdgeInsets.all(8),
-                  child: Text(
-                    'HomePage Image: https://www.freepik.com/\nApp Icon: https://www.freepik.com/',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 8.0,
-                  right: 8,
-                  top: 0,
-                  bottom: 8,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: Colors.yellow),
-                  padding: EdgeInsets.all(8),
-                  child: Text(
-                    'Police: https://pngtree.com/free-png\nNurse: https://pngtree.com/free-png\nCat: https://pngtree.com/free-png',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //     left: 8.0,
+              //     right: 8,
+              //     top: 8,
+              //     bottom: 8,
+              //   ),
+              //   child: Container(
+              //     //width: double.infinity,
+              //     decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(8),
+              //         color: Colors.yellow),
+              //     padding: EdgeInsets.all(8),
+              //     child: Text(
+              //       'Image Sources : ',
+              //       style: TextStyle(
+              //           fontSize: 18,
+              //           fontWeight: FontWeight.bold,
+              //           color: Colors.black),
+              //     ),
+              //   ),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //     left: 8.0,
+              //     right: 8,
+              //     top: 0,
+              //     bottom: 8,
+              //   ),
+              //   child: Container(
+              //     width: double.infinity,
+              //     decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(8),
+              //         color: Colors.yellow),
+              //     padding: EdgeInsets.all(8),
+              //     child: Text(
+              //       'HomePage Image: https://www.freepik.com/\nApp Icon: https://www.freepik.com/',
+              //       style: TextStyle(
+              //           fontSize: 18,
+              //           fontWeight: FontWeight.bold,
+              //           color: Colors.black),
+              //     ),
+              //   ),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //     left: 8.0,
+              //     right: 8,
+              //     top: 0,
+              //     bottom: 8,
+              //   ),
+              //   child: Container(
+              //     width: double.infinity,
+              //     decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(8),
+              //         color: Colors.yellow),
+              //     padding: EdgeInsets.all(8),
+              //     child: Text(
+              //       'Police: https://pngtree.com/free-png\nNurse: https://pngtree.com/free-png\nCat: https://pngtree.com/free-png',
+              //       style: TextStyle(
+              //           fontSize: 18,
+              //           fontWeight: FontWeight.bold,
+              //           color: Colors.black),
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: 10,
+              // ),
               Padding(
                 padding: const EdgeInsets.only(
                   left: 8.0,
@@ -302,7 +302,7 @@ class About extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         launch(
-                            'mailto:mail.sachin161@gmail.com?subject=Regarding Covid-19 App');
+                            'mailto:mail.sachin161@gmail.com?subject=Regarding Covi-Help App');
                       },
                       child: Container(
                           height: 50,
