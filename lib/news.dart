@@ -7,6 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 class News extends StatefulWidget {
   News({Key key}) : super(key: key);
 
+  // covi-help fixed
+
   @override
   _NewsState createState() => _NewsState();
 }
