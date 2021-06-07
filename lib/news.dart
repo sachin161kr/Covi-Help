@@ -49,123 +49,184 @@ class _NewsState extends State<News> {
                     textAlign: TextAlign.center,
                   ));
             }
-            return ListView.builder(itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () async {
-                  String myurl = json['articles'][index]['url'];
-                  if (await canLaunch(myurl)) {
-                    await launch(
-                      myurl,
-                      forceSafariVC: true,
-                      forceWebView: true,
-                      enableJavaScript: true,
-                      headers: <String, String>{'header_key': 'header_value'},
-                    );
-                  } else {
-                    throw 'Could not launch $myurl';
-                  }
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                      color: Colors.red,
-                      width: 4,
-                    )),
-                    child: Card(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                                height: 280,
-                                width: double.infinity,
-                                child: Image.network(
-                                  json['articles'][index]['urlToImage'],
-                                  fit: BoxFit.cover,
-                                )),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                right: 8, bottom: 1, left: 8),
-                            child: Container(
+            return ListView.builder(
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () async {
+                    String myurl = json['articles'][index]['url'];
+                    if (await canLaunch(myurl)) {
+                      await launch(
+                        myurl,
+                        forceSafariVC: true,
+                        forceWebView: true,
+                        enableJavaScript: true,
+                        headers: <String, String>{'header_key': 'header_value'},
+                      );
+                    } else {
+                      throw 'Could not launch $myurl';
+                    }
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                        color: Colors.red,
+                        width: 4,
+                      )),
+                      child: Card(
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                  height: 280,
+                                  width: double.infinity,
+                                  child: json['articles'][index]
+                                              ['urlToImage'] ==
+                                          null
+                                      ? Center(
+                                          child: Text(
+                                          'Not Available',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ))
+                                      : Image.network(
+                                          json['articles'][index]['urlToImage'],
+                                          fit: BoxFit.cover,
+                                        )),
+                            ),
+                            Padding(
                               padding: const EdgeInsets.only(
-                                  left: 8, right: 8, bottom: 1),
-                              //color: Colors.red,
-                              width: double.infinity,
-                              child: Text(
-                                'Source: ' +
-                                    json['articles'][index]['source']['name'],
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.left,
+                                  right: 8, bottom: 1, left: 8),
+                              child: Container(
+                                padding: const EdgeInsets.only(
+                                    left: 8, right: 8, bottom: 1),
+                                //color: Colors.red,
+                                width: double.infinity,
+                                child: json['articles'][index]['source']
+                                            ['name'] ==
+                                        null
+                                    ? Center(
+                                        child: Text(
+                                        'Not Available',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ))
+                                    : Text(
+                                        'Source: ' +
+                                            json['articles'][index]['source']
+                                                ['name'],
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        textAlign: TextAlign.left,
+                                      ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              right: 8,
-                              bottom: 1,
-                              left: 8,
-                            ),
-                            child: Container(
-                              padding: const EdgeInsets.all(8.0),
-                              width: double.infinity,
-                              child: Text(
-                                'Published At: ' +
-                                    json['articles'][index]['publishedAt'],
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.left,
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                right: 8,
+                                bottom: 1,
+                                left: 8,
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(8.0),
+                                width: double.infinity,
+                                child: json['articles'][index]['publishedAt'] ==
+                                        null
+                                    ? Center(
+                                        child: Text(
+                                        'Not Available',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ))
+                                    : Text(
+                                        'Published At: ' +
+                                            json['articles'][index]
+                                                ['publishedAt'],
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        textAlign: TextAlign.left,
+                                      ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                right: 8, bottom: 8, left: 8),
-                            child: Container(
-                              padding: const EdgeInsets.all(8.0),
-                              color: Colors.yellow,
-                              width: double.infinity,
-                              child: Text(
-                                json['articles'][index]['title'],
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                                textAlign: TextAlign.left,
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  right: 8, bottom: 8, left: 8),
+                              child: Container(
+                                padding: const EdgeInsets.all(8.0),
+                                color: Colors.yellow,
+                                width: double.infinity,
+                                child: json['articles'][index]['title'] == null
+                                    ? Center(
+                                        child: Text(
+                                        'Not Available',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ))
+                                    : Text(
+                                        json['articles'][index]['title'],
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black),
+                                        textAlign: TextAlign.left,
+                                      ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                right: 8, bottom: 8, left: 8),
-                            child: Container(
-                              padding: const EdgeInsets.all(8.0),
-                              color: Colors.green,
-                              width: double.infinity,
-                              child: Text(
-                                json['articles'][index]['description'],
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                                textAlign: TextAlign.left,
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  right: 8, bottom: 8, left: 8),
+                              child: Container(
+                                padding: const EdgeInsets.all(8.0),
+                                color: Colors.green,
+                                width: double.infinity,
+                                child: json['articles'][index]['description'] ==
+                                        null
+                                    ? Center(
+                                        child: Text(
+                                        'Not Available',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ))
+                                    : Text(
+                                        json['articles'][index]['description'],
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black),
+                                        textAlign: TextAlign.left,
+                                      ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
-            });
+                );
+              },
+              itemCount: len,
+            );
           },
           future: getNews(),
         ));
