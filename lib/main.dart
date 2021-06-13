@@ -11,6 +11,8 @@ void main() {
   ));
 }
 
+// app is ready
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
